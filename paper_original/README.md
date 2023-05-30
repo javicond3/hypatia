@@ -1,6 +1,6 @@
-# RTT experiment
+# Paper reproduction
 
-<!-- This is the code repository introduced and used in "Exploring the “Internet from space” with Hypatia" 
+This is the code repository introduced and used in "Exploring the “Internet from space” with Hypatia" 
 by Simon Kassing*, Debopam Bhattacherjee*, André Baptista Águas, Jens Eirik Saethre and Ankit Singla
 (*equal contribution), which is published in the Internet Measurement Conference (IMC) 2020.
 
@@ -39,7 +39,7 @@ you can download and extract all (temporary) data which Hypatia generates for th
    ```
    cd paper
    python extract_temp_data.py
-   ``` -->
+   ```
 
 ## Steps to run
 
@@ -51,9 +51,9 @@ Instructions can be found in `<hypatia>/paper/satellite_networks_state/README.md
 
 Instructions can be found in `<hypatia>/ns3-sat-sim/README.md`
 
-<!-- **Step 3: performing analysis using satgenpy**
+**Step 3: performing analysis using satgenpy**
 
-Instructions can be found in `<hypatia>/paper/satgenpy_analysis/README.md` -->
+Instructions can be found in `<hypatia>/paper/satgenpy_analysis/README.md`
 
 **Step 4: running ns-3 experiments**
 

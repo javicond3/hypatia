@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 # Core values
-dynamic_state_update_interval_ms = 1000                         # 1000 millisecond update interval
+dynamic_state_update_interval_ms = 100                          # 100 millisecond update interval
 simulation_end_time_s = 200                                     # 200 seconds
 pingmesh_interval_ns = 1 * 1000 * 1000                          # A ping every 1ms
 enable_isl_utilization_tracking = True                          # Enable utilization tracking
@@ -33,23 +33,21 @@ simulation_end_time_ns = simulation_end_time_s * 1000 * 1000 * 1000
 dynamic_state = "dynamic_state_" + str(dynamic_state_update_interval_ms) + "ms_for_" + str(simulation_end_time_s) + "s"
 
 # Chosen pairs:
-# > Madrid (351) to Barcelona (352)
 # > Rio de Janeiro (1174) to St. Petersburg (1229)
 # > Manila (1173) to Dalian (1241)
 # > Istanbul (1170) to Nairobi (1252)
 # > Paris (1180 (1156 for the Paris-Moscow GS relays)) to Moscow (1177 (1232 for the Paris-Moscow GS relays))
-# full_satellite_network_isls = "kuiper_630_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls"
-full_satellite_network_isls = "telesat_1015_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls"
-
+full_satellite_network_isls = "kuiper_630_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls"
+full_satellite_network_gs_relay = "kuiper_630_isls_none_ground_stations_paris_moscow_grid_algorithm_free_one_only_gs_relays"
 chosen_pairs = [
-    ("telesat_1015_isls", 351, 352, "TcpNewReno", full_satellite_network_isls),
-    ("telesat_1015_isls", 352, 351, "TcpNewReno", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1174, 1229, "TcpVegas", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1173, 1241, "TcpNewReno", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1173, 1241, "TcpVegas", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1170, 1252, "TcpNewReno", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1170, 1252, "TcpVegas", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1180, 1177, "TcpNewReno", full_satellite_network_isls),
+    ("kuiper_630_isls", 1174, 1229, "TcpNewReno", full_satellite_network_isls),
+    ("kuiper_630_isls", 1174, 1229, "TcpVegas", full_satellite_network_isls),
+    ("kuiper_630_isls", 1173, 1241, "TcpNewReno", full_satellite_network_isls),
+    ("kuiper_630_isls", 1173, 1241, "TcpVegas", full_satellite_network_isls),
+    ("kuiper_630_isls", 1170, 1252, "TcpNewReno", full_satellite_network_isls),
+    ("kuiper_630_isls", 1170, 1252, "TcpVegas", full_satellite_network_isls),
+    ("kuiper_630_isls", 1180, 1177, "TcpNewReno", full_satellite_network_isls),
+    ("kuiper_630_gs_relays", 1156, 1232, "TcpNewReno", full_satellite_network_gs_relay),
 ]
 
 

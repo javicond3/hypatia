@@ -36,6 +36,8 @@ pip install git+https://github.com/snkas/exputilpy.git@v1.6 || exit 1
 pip install git+https://github.com/snkas/networkload.git@v1.3 || exit 1
 sudo apt-get install gnuplot
 
+sudo apt-get install screen
+
 # Confirmation dependencies are installed
 echo ""
 echo "Hypatia dependencies have been installed."
