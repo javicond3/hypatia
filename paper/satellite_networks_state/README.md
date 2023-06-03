@@ -41,7 +41,7 @@ Python path.
    gen_data
    <!-- |-- 25x25_algorithm_free_one_only_over_isls
    |-- kuiper_630_isls_none_ground_stations_paris_moscow_grid_algorithm_free_one_only_gs_relays
-   |-- kuiper_630_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls
-   |-- starlink_550_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls -->
-   |-- telesat_1015_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls
+   |-- kuiper_630_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls
+   |-- starlink_550_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls -->
+   |-- telesat_1015_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls
    ```

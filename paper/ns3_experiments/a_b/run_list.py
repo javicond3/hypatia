@@ -38,18 +38,20 @@ dynamic_state = "dynamic_state_" + str(dynamic_state_update_interval_ms) + "ms_f
 # > Manila (1173) to Dalian (1241)
 # > Istanbul (1170) to Nairobi (1252)
 # > Paris (1180 (1156 for the Paris-Moscow GS relays)) to Moscow (1177 (1232 for the Paris-Moscow GS relays))
-# full_satellite_network_isls = "kuiper_630_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls"
-full_satellite_network_isls = "telesat_1015_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls"
+# full_satellite_network_isls = "kuiper_630_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls"
+full_satellite_network_isls = "telesat_1015_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls"
 
 chosen_pairs = [
     ("telesat_1015_isls", 351, 352, "TcpNewReno", full_satellite_network_isls),
-    ("telesat_1015_isls", 352, 351, "TcpNewReno", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1174, 1229, "TcpVegas", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1173, 1241, "TcpNewReno", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1173, 1241, "TcpVegas", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1170, 1252, "TcpNewReno", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1170, 1252, "TcpVegas", full_satellite_network_isls),
-    # ("kuiper_630_isls", 1180, 1177, "TcpNewReno", full_satellite_network_isls),
+    ("telesat_1015_isls", 351, 353, "TcpNewReno", full_satellite_network_isls),
+    ("telesat_1015_isls", 351, 354, "TcpNewReno", full_satellite_network_isls),
+    ("telesat_1015_isls", 351, 355, "TcpNewReno", full_satellite_network_isls),
+    ("telesat_1015_isls", 351, 356, "TcpNewReno", full_satellite_network_isls),
+    ("telesat_1015_isls", 351, 357, "TcpNewReno", full_satellite_network_isls),
+    ("telesat_1015_isls", 351, 358, "TcpNewReno", full_satellite_network_isls),
+    ("telesat_1015_isls", 351, 359, "TcpNewReno", full_satellite_network_isls),
+    ("telesat_1015_isls", 351, 360, "TcpNewReno", full_satellite_network_isls),
+
 ]
 
 

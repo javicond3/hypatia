@@ -62,7 +62,7 @@ class MainHelper:
             duration_s,
             time_step_ms,
             isl_selection,            # isls_{none, plus_grid}
-            gs_selection,             # ground_stations_{top_100, paris_moscow_grid}
+            gs_selection,             # ground_stations_{experiment, paris_moscow_grid}
             dynamic_state_algorithm,  # algorithm_{free_one_only_{gs_relays,_over_isls}, paired_many_only_over_isls}
             num_threads
     ):
@@ -78,9 +78,9 @@ class MainHelper:
 
         # Ground stations
         print("Generating ground stations...")
-        if gs_selection == "ground_stations_top_100":
+        if gs_selection == "ground_stations_experiment":
             satgen.extend_ground_stations(
-                "input_data/ground_stations_cities_sorted_by_estimated_2025_pop_top_100.basic.txt",
+                "input_data/ground_stations_cities_experiment.basic.txt",
                 output_generated_data_dir + "/" + name + "/ground_stations.txt"
             )
         elif gs_selection == "ground_stations_paris_moscow_grid":

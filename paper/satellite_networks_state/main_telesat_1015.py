@@ -77,7 +77,7 @@ def main():
         print("Must supply exactly six arguments")
         print("Usage: python main_telesat_1015.py [duration (s)] [time step (ms)] "
               "[isls_plus_grid / isls_none] "
-              "[ground_stations_{top_100, paris_moscow_grid}] "
+              "[ground_stations_{experiment, paris_moscow_grid}] "
               "[algorithm_{free_one_only_over_isls, free_one_only_gs_relays, paired_many_only_over_isls}] "
               "[num threads]")
         exit(1)
