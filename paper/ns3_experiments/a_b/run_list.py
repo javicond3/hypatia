@@ -32,62 +32,61 @@ dynamic_state_update_interval_ns = dynamic_state_update_interval_ms * 1000 * 100
 simulation_end_time_ns = simulation_end_time_s * 1000 * 1000 * 1000
 dynamic_state = "dynamic_state_" + str(dynamic_state_update_interval_ms) + "ms_for_" + str(simulation_end_time_s) + "s"
 
-# Chosen pairs:
-# > Madrid (351) to Barcelona (352)
-# > Rio de Janeiro (1174) to St. Petersburg (1229)
-# > Manila (1173) to Dalian (1241)
-# > Istanbul (1170) to Nairobi (1252)
-# > Paris (1180 (1156 for the Paris-Moscow GS relays)) to Moscow (1177 (1232 for the Paris-Moscow GS relays))
-# full_satellite_network_isls = "kuiper_630_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls"
-full_satellite_network_isls = "telesat_1015_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls"
-
-chosen_pairs = [
-    ("telesat_1015_isls", 351, 352, "TcpNewReno", full_satellite_network_isls),
-    ("telesat_1015_isls", 351, 353, "TcpNewReno", full_satellite_network_isls),
-    ("telesat_1015_isls", 351, 354, "TcpNewReno", full_satellite_network_isls),
-    ("telesat_1015_isls", 351, 355, "TcpNewReno", full_satellite_network_isls),
-    ("telesat_1015_isls", 351, 356, "TcpNewReno", full_satellite_network_isls),
-    ("telesat_1015_isls", 351, 357, "TcpNewReno", full_satellite_network_isls),
-    ("telesat_1015_isls", 351, 358, "TcpNewReno", full_satellite_network_isls),
-    ("telesat_1015_isls", 351, 359, "TcpNewReno", full_satellite_network_isls),
-    ("telesat_1015_isls", 351, 360, "TcpNewReno", full_satellite_network_isls),
-
-]
+#scenarios
+def generateAtoBPoints(constellation):
+    paths = []
+    count = 0
+    if constellation == "kuiper":
+        count = 1156
+    elif constellation == "starlink":
+        count = 1584
+    elif constellation == "telesat":
+        count = 351
+    else:
+        print("Error in constellation")
+        
+    for orig in range(10):
+        for dest in range(10):
+            if (orig != dest): 
+                paths.append((orig + count, dest + count))
+    return paths
 
 
-def get_tcp_run_list():
-    run_list = []
-    for p in chosen_pairs:
-        run_list += [
-            {
-                "name": p[0] + "_" + str(p[1]) + "_to_" + str(p[2]) + "_with_" + p[3] + "_at_10_Mbps",
-                "satellite_network": p[4],
-                "dynamic_state": dynamic_state,
-                "dynamic_state_update_interval_ns": dynamic_state_update_interval_ns,
-                "simulation_end_time_ns": simulation_end_time_ns,
-                "data_rate_megabit_per_s": 10.0,
-                "queue_size_pkt": 100,
-                "enable_isl_utilization_tracking": enable_isl_utilization_tracking,
-                "isl_utilization_tracking_interval_ns": isl_utilization_tracking_interval_ns,
-                "from_id": p[1],
-                "to_id": p[2],
-                "tcp_socket_type": p[3],
-            },
-        ]
+experiments = [ 
+        {
+        "name":"kuiper_630_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls",
+        "constellation": "kuiper_630_isls",
+        "paths": generateAtoBPoints("kuiper")
+        },
+        {
+        "name":"starlink_550_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls",
+        "constellation": "starlink_550_isls",
+        "paths": generateAtoBPoints("starlink")
+        },
+        {
+        "name":"telesat_1015_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls",
+        "constellation": "telesat_1015_isls",
+        "paths": generateAtoBPoints("telesat")
+        }
+    ]
 
-    return run_list
+def generateChosenPairs(experiments):
+    chosen_pairs = []
+    for experiment in experiments:
+        for path in experiment["paths"]:
+            chosen_pairs.append((experiment["constellation"], path[0], path[1], experiment["name"]))
+    return chosen_pairs
+
+# Example of chose_pairs
+# [ ("telesat_1015_isls", 351, 352, full_satellite_network_isls)]
+chosen_pairs = generateChosenPairs(experiments)
+
 
 
 def get_pings_run_list():
 
-    # TCP transport protocol does not matter for the ping run
-    reduced_chosen_pairs = []
-    for p in chosen_pairs:
-        if not (p[0], p[1], p[2], p[4]) in reduced_chosen_pairs:
-            reduced_chosen_pairs.append((p[0], p[1], p[2], p[4]))  # Stripped out p[3] = transport protocol
-
     run_list = []
-    for p in reduced_chosen_pairs:
+    for p in chosen_pairs:
         run_list += [
             {
                 "name": p[0] + "_" + str(p[1]) + "_to_" + str(p[2]) + "_pings",

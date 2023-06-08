@@ -44,7 +44,39 @@ fi
 echo "Running workload ${id} with ${num_threads} threads"
 
 
- if [ "${id}" = "15" ]; then
-   python main_telesat_1015.py 200 1000 isls_plus_grid ground_stations_experiment algorithm_free_one_only_over_isls ${num_threads}
- fi
+# Kuiper-630 with ISLs
+if [ "${id}" = "1" ]; then
+  python main_kuiper_630.py 200 50 isls_plus_grid ground_stations_experiment algorithm_free_one_only_over_isls ${num_threads}
+fi
+if [ "${id}" = "2" ]; then
+  python main_kuiper_630.py 200 100 isls_plus_grid ground_stations_experiment algorithm_free_one_only_over_isls ${num_threads}
+fi
+if [ "${id}" = "3" ]; then
+  python main_kuiper_630.py 200 1000 isls_plus_grid ground_stations_experiment algorithm_free_one_only_over_isls ${num_threads}
+fi
+
+# Starlink-550 with ISLs
+if [ "${id}" = "4" ]; then
+  python main_starlink_550.py 200 50 isls_plus_grid ground_stations_experiment algorithm_free_one_only_over_isls ${num_threads}
+fi
+if [ "${id}" = "5" ]; then
+  python main_starlink_550.py 200 100 isls_plus_grid ground_stations_experiment algorithm_free_one_only_over_isls ${num_threads}
+fi
+if [ "${id}" = "6" ]; then
+  python main_starlink_550.py 200 1000 isls_plus_grid ground_stations_experiment algorithm_free_one_only_over_isls ${num_threads}
+fi
+
+# Telesat-1015 with ISLs
+if [ "${id}" = "7" ]; then
+  python main_telesat_1015.py 200 50 isls_plus_grid ground_stations_experiment algorithm_free_one_only_over_isls ${num_threads}
+fi
+if [ "${id}" = "8" ]; then
+  python main_telesat_1015.py 200 100 isls_plus_grid ground_stations_experiment algorithm_free_one_only_over_isls ${num_threads}
+fi
+if [ "${id}" = "9" ]; then
+  python main_telesat_1015.py 200 1000 isls_plus_grid ground_stations_experiment algorithm_free_one_only_over_isls ${num_threads}
+fi
+
+
+
 

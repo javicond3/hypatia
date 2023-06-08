@@ -1,10 +1,12 @@
 import os
 import csv
 import re
+import pandas as pd
 
 
 folder_path = './runs'
-csv_path = './runs/rtt.csv'
+csv_path = './rtt.csv'
+merged_csv_path ='./rtt_merged.csv'
 
 # Get a list of all items in the folder
 items = os.listdir(folder_path)
@@ -23,24 +25,31 @@ def getCityName(constellation, origin, dest):
     origin_name = "Unknown"
     dest_id = -1
     dest_name = "Unknown"
-    if constellation == "telesat":
-        origin_id = int(origin) - 351
-        dest_id = int(dest) - 351
+    count = 0
+    if constellation == "kuiper":
+        count = 1156
+    elif constellation == "starlink":
+        count = 1584
+    elif constellation == "telesat":
+        count = 351
     else:
         print("Error in constellation")
+    origin_id = int(origin) - count
+    dest_id = int(dest) - count
 
     city_names = {
         0: "Madrid",
         1: "Barcelona",
-        2: "Ankara",
+        2: "Riyadh",
         3: "Los-Angeles",
         4: "New-York",
         5: "Mexico-City",
-        6: "Buenos-Aires",
-        7: "Nairobi",
-        8: "Beijing",
+        6: "Bogota",
+        7: "Cairo",
+        8: "Tokyo",
         9: "Sidney"
     }
+    
 
     origin_name = city_names.get(origin_id, "Unknown")
     dest_name = city_names.get(dest_id, "Unknown")
@@ -87,8 +96,35 @@ with open(csv_path, "w", newline="") as file:
         row = folder_name_values + folder_file_values
         writer.writerows([row])
 
+
+def mergeConstellations():
+    df = pd.read_csv(csv_path)
+
+    constellations = df['constellation'].unique()
+
+    constellation_dfs = {}
+
+    for constellation in constellations:
+        filtered_df = df[df['constellation'] == constellation]
+        
+        new_columns = [
+            column + '_' + constellation if column not in ['origin_name', 'destination_name', 'type'] else column
+            for column in filtered_df.columns
+        ]
+        
+
+        filtered_df.columns = new_columns
+        
+        constellation_dfs[constellation] = filtered_df
+
+
+    merged_df = pd.merge(constellation_dfs['telesat'], constellation_dfs['kuiper'], on=['origin_name', 'destination_name', 'type'], how='outer')
+    merged_df = pd.merge(merged_df, constellation_dfs['starlink'], on=['origin_name', 'destination_name', 'type'], how='outer')
+    new_order = ['origin_name', 'destination_name', 'type'] + [col for col in merged_df.columns if col not in ['origin_name', 'destination_name', 'type']]
+    merged_df = merged_df[new_order]
+
+    merged_df.to_csv(merged_csv_path, index=False)
+
+
+mergeConstellations()
 print("Results generated")
-
-
-
-

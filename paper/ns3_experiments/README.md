@@ -26,15 +26,14 @@ The following ground stations are used:
 City name          GID           Kuiper id        Starlink id         Telesat id
 Madrid             0     1156 + 0 = 1156   1584 + 0 = 1584    351 + 0 = 351
 Barcelona          1     1156 + 1 = 1157   1584 + 1 = 1585    351 + 1 = 352
-Ankara             2     1156 + 2 = 1158   1584 + 2 = 1586    351 + 2 = 353
+Riyadh             2     1156 + 2 = 1158   1584 + 2 = 1586    351 + 2 = 353
 Los-Angeles        3     1156 + 3 = 1159   1584 + 3 = 1587    351 + 3 = 354
 New-York           4     1156 + 4 = 1160   1584 + 4 = 1588    351 + 4 = 355
 Mexico-City        5     1156 + 5 = 1161   1584 + 5 = 1589    351 + 5 = 356
-Buenos-Aires       6     1156 + 6 = 1162   1584 + 6 = 1590    351 + 6 = 357
-Nairobi            7     1156 + 7 = 1163   1584 + 7 = 1591    351 + 7 = 358
-Beijing            8     1156 + 8 = 1164   1584 + 8 = 1592    351 + 8 = 359
-Sydney             9     1156 + 9 = 1165   1584 + 9 = 1593    351 + 9 = 360
-
+Bogota       6     1156 + 6 = 1162   1584 + 6 = 1590    351 + 6 = 357
+Cairo            7     1156 + 7 = 1163   1584 + 7 = 1591    351 + 7 = 358
+Tokyo            8     1156 + 8 = 1164   1584 + 8 = 1592    351 + 8 = 359
+Sidney             9     1156 + 9 = 1165   1584 + 9 = 1593    351 + 9 = 360
 ```
 
 ... of which the following directed pairs are run in Telesat:
