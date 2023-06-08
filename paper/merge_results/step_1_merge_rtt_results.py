@@ -4,9 +4,9 @@ import re
 import pandas as pd
 
 
-folder_path = './runs'
-csv_path = './rtt.csv'
-merged_csv_path ='./rtt_merged.csv'
+folder_path = '../ns3_experiments/a_b/runs'
+csv_path = '../ns3_experiments/a_b/rtt.csv'
+merged_csv_path ='../ns3_experiments/a_b/rtt_merged.csv'
 
 # Get a list of all items in the folder
 items = os.listdir(folder_path)
@@ -87,7 +87,7 @@ with open(csv_path, "w", newline="") as file:
     writer = csv.writer(file)
     writer.writerow(header)
     for folder_name in folder_names:
-        file_name = './runs/'+folder_name+'/logs_ns3/pingmesh.txt'
+        file_name = folder_path+"/"+folder_name+'/logs_ns3/pingmesh.txt'
         folder_name_values = getFolderValues(folder_name)
         folder_file_values = getFileValues(file_name)
         cityNames = getCityName(folder_name_values[0], folder_name_values[3], folder_name_values[4])

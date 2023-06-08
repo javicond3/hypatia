@@ -2,7 +2,7 @@ import pandas as pd
 
 
 of_path = '../of/prepared_rtt_of.csv'
-satellite_path ='./rtt_merged.csv'
+satellite_path ='../ns3_experiments/a_b/rtt_merged.csv'
 merged_satellite_of_path = './rtt_merged_of_satellite.csv'
 
 def mergeFiles():

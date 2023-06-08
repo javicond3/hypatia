@@ -20,33 +20,32 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import sys
-from satgen.post_analysis.print_routes_and_rtt import print_routes_and_rtt
+### SATELLITE NETWORKS STATE
+
+cd satellite_networks_state || exit 1
+bash generate_all_local.sh || exit 1
+cd .. || exit 1
 
 
-def main():
-    args = sys.argv[1:]
-    if len(args) != 6:
-        print("Must supply exactly six arguments")
-        print("Usage: python -m satgen.post_analysis.main_print_routes_and_rtt.py [data_dir] [satellite_network_dir] "
-              "[dynamic_state_update_interval_ms] [end_time_s] [src] [dst]")
-        exit(1)
-    else:
-        core_network_folder_name = args[1].split("/")[-1]
-        base_output_dir = "%s/%s" % (
-            args[0], core_network_folder_name )
-        print("Data dir: " + args[0])
-        print("Used data dir to form base output dir: " + base_output_dir)
-        print_routes_and_rtt(
-            base_output_dir,
-            args[1],
-            int(args[2]),
-            int(args[3]),
-            int(args[4]),
-            int(args[5]),
-            ""  # Must be executed in satgenpy directory
-        )
+
+### NS-3 EXPERIMENTS
+
+cd ns3_experiments || exit 1
+
+# A to B
+cd a_b || exit 1
+python step_1_generate_runs.py || exit 1
+python step_2_run.py || exit 1
+cd ../.. || exit 1  
 
 
-if __name__ == "__main__":
-    main()
+# Satgenpy analysis (get paths)
+cd satgenpy_analysis || exit 1
+python perform_full_analysis.py || exit 1
+cd .. || exit 1 
+
+# Merge Results
+cd merge_results|| exit 1 
+python step_1_merge_rtt_results.py || exit 1
+python step_2_merge_rtt_of_results.py || exit 1
+cd .. || exit 1

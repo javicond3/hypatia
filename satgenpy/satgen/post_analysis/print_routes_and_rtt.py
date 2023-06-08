@@ -123,14 +123,14 @@ def print_routes_and_rtt(base_output_dir, satellite_network_dir, dynamic_state_u
                 data_file.write("%d,%.10f\n" % (rtt_ns_list[i][0], rtt_ns_list[i][1]))
 
         # Make plot
-        pdf_filename = pdf_dir + "/time_vs_networkx_rtt_" + str(src) + "_to_" + str(dst) + ".pdf"
-        tf = tempfile.NamedTemporaryFile(delete=False)
-        tf.close()
-        local_shell.copy_file(satgenpy_dir_with_ending_slash + "plot/plot_time_vs_networkx_rtt.plt", tf.name)
-        local_shell.sed_replace_in_file_plain(tf.name, "[OUTPUT-FILE]", pdf_filename)
-        local_shell.sed_replace_in_file_plain(tf.name, "[DATA-FILE]", data_filename)
-        local_shell.perfect_exec("gnuplot " + tf.name)
-        print("Produced plot: " + pdf_filename)
-        local_shell.remove(tf.name)
+        # pdf_filename = pdf_dir + "/time_vs_networkx_rtt_" + str(src) + "_to_" + str(dst) + ".pdf"
+        # tf = tempfile.NamedTemporaryFile(delete=False)
+        # tf.close()
+        # local_shell.copy_file(satgenpy_dir_with_ending_slash + "plot/plot_time_vs_networkx_rtt.plt", tf.name)
+        # local_shell.sed_replace_in_file_plain(tf.name, "[OUTPUT-FILE]", pdf_filename)
+        # local_shell.sed_replace_in_file_plain(tf.name, "[DATA-FILE]", data_filename)
+        # local_shell.perfect_exec("gnuplot " + tf.name)
+        # print("Produced plot: " + pdf_filename)
+        # local_shell.remove(tf.name)
 
 

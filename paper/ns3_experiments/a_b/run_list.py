@@ -46,7 +46,7 @@ def generateAtoBPoints(constellation):
         print("Error in constellation")
         
     for orig in range(10):
-        for dest in range(10):
+        for dest in range(orig,10):
             if (orig != dest): 
                 paths.append((orig + count, dest + count))
     return paths
@@ -78,7 +78,7 @@ def generateChosenPairs(experiments):
     return chosen_pairs
 
 # Example of chose_pairs
-# [ ("telesat_1015_isls", 351, 352, full_satellite_network_isls)]
+# [ ("telesat_1015_isls", 351, 352, telesat_1015_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls")]
 chosen_pairs = generateChosenPairs(experiments)
 
 

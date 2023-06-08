@@ -2,6 +2,27 @@
 
 ## Steps to run
 
+**Step 0: installation:**
+
+1. System setup:
+   - Python version 3.7+
+   - Recent Linux operating system (e.g., Ubuntu 18+)
+
+2. Install dependencies -> only the first time:
+   ```
+   bash hypatia_install_dependencies.sh
+   ```
+   
+3. Build all four modules (as far as possible) -> only the first time:
+   ```
+   bash hypatia_build.sh
+   ```
+   
+4. Run tests (to validate the scenario):
+   ```
+   bash hypatia_run_tests.sh
+   ```
+
 **Step 1: generating LEO satellite network dynamic state over time**
 
 Instructions can be found in `<hypatia>/paper/satellite_networks_state/README.md`
