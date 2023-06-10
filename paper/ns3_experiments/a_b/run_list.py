@@ -78,7 +78,7 @@ def generateChosenPairs(experiments):
     return chosen_pairs
 
 # Example of chose_pairs
-# [ ("telesat_1015_isls", 351, 352, telesat_1015_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls")]
+# [ ("telesat_1015_isls", 351, 352, "telesat_1015_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls")]
 chosen_pairs = generateChosenPairs(experiments)
 
 
