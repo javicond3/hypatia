@@ -29,7 +29,7 @@ Python path.
 1. Make sure you have all dependencies installed as prescribed in 
    `<hypatia>/satgenpy/README.md`
 
-2. Run from the main folder for the satellite networks used in the paper:
+2. Run from the main folder for the satellite networks used in the paper_experiment_3:
    ```
    bash generate_all_local.sh
    # Or if you have remote machines to distribute the workloads:

@@ -40,9 +40,9 @@ for run in get_pings_run_list():
     local_shell.perfect_exec(
         "cd ../../../ns3-sat-sim/simulator/contrib/basic-sim/tools/plotting/plot_ping; "
         "python plot_ping.py "
-        "../../../../../../../paper/ns3_experiments/a_b/runs/" + run["name"] + "/logs_ns3 "
-        "../../../../../../../paper/ns3_experiments/a_b/data/" + run["name"] + " "
-        "../../../../../../../paper/ns3_experiments/a_b/pdf/" + run["name"] + " "
+        "../../../../../../../paper_experiment_3/ns3_experiments/a_b/runs/" + run["name"] + "/logs_ns3 "
+        "../../../../../../../paper_experiment_3/ns3_experiments/a_b/data/" + run["name"] + " "
+        "../../../../../../../paper_experiment_3/ns3_experiments/a_b/pdf/" + run["name"] + " "
         "" + str(run["from_id"]) + " " + str(run["to_id"]) + " " + str(1 * 1000 * 1000 * 1000),  # from -> to
                                                                                                  # 1s interval
         output_redirect=exputil.OutputRedirect.CONSOLE

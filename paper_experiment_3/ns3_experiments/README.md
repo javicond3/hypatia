@@ -1,13 +1,13 @@
 # ns-3 experiments
 
 Given that you have generated the constellation dynamic state data over time in 
-`satgenpy`, here you can run the ns-3 experiments used in the paper.
+`satgenpy`, here you can run the ns-3 experiments used in the paper_experiment_3.
 
 ## A to B experiments
 
 **Explanation**
 
-There is communication for three directed pairs presented in the paper. 
+There is communication for three directed pairs presented in the paper_experiment_3. 
 These were chosen from among the 100 ground stations used, which were an 
 input in `satgenpy`:
 

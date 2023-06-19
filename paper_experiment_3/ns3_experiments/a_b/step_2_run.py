@@ -47,8 +47,8 @@ for run in get_pings_run_list():
     local_shell.make_full_dir(logs_ns3_dir)
     commands_to_run.append(
         "cd ../../../ns3-sat-sim/simulator; " 
-        "./waf --run=\"main_satnet --run_dir='../../paper/ns3_experiments/a_b/runs/" + run["name"] + "'\" "
-        "2>&1 | tee '../../paper/ns3_experiments/a_b/" + logs_ns3_dir + "/console.txt'"
+        "./waf --run=\"main_satnet --run_dir='../../paper_experiment_3/ns3_experiments/a_b/runs/" + run["name"] + "'\" "
+        "2>&1 | tee '../../paper_experiment_3/ns3_experiments/a_b/" + logs_ns3_dir + "/console.txt'"
     )
 
 # Run the commands

@@ -93,11 +93,11 @@ def generateChosenPairs(experiments):
 chosen_pairs = generateChosenPairs(experiments)
 
     
-command_init = "cd ../../satgenpy; python -m satgen.post_analysis.main_print_routes_and_rtt ../paper/satgenpy_analysis/data ../paper/satellite_networks_state/gen_data/"
+command_init = "cd ../../satgenpy; python -m satgen.post_analysis.main_print_routes_and_rtt ../paper_experiment_3/satgenpy_analysis/data ../paper_experiment_3/satellite_networks_state/gen_data/"
 
 
 for chosen_pair in chosen_pairs:
-    command_end = "{} {} {} {} {} > ../paper/satgenpy_analysis/data/command_logs/{}_{}_to_{}.log 2>&1".format(
+    command_end = "{} {} {} {} {} > ../paper_experiment_3/satgenpy_analysis/data/command_logs/{}_{}_to_{}.log 2>&1".format(
         chosen_pair[3], dynamic_state_update_interval_ms, 
         simulation_end_time_s, chosen_pair[1], chosen_pair[2],
         chosen_pair[0], chosen_pair[1], chosen_pair[2],)
@@ -105,10 +105,10 @@ for chosen_pair in chosen_pairs:
 
 
 # "cd ../../satgenpy; python -m satgen.post_analysis.main_print_routes_and_rtt "
-# "../paper/satgenpy_analysis/data ../paper/satellite_networks_state/gen_data/"
+# "../paper_experiment_3/satgenpy_analysis/data ../paper_experiment_3/satellite_networks_state/gen_data/"
 # "telesat_1015_isls_plus_grid_ground_stations_experiment_algorithm_free_one_only_over_isls "
 # "1000 200 351 352 "
-# "> ../paper/satgenpy_analysis/data/command_logs/manual_telesat_isls_351_to_352.log 2>&1"
+# "> ../paper_experiment_3/satgenpy_analysis/data/command_logs/manual_telesat_isls_351_to_352.log 2>&1"
 
 
 # Manual

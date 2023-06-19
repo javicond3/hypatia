@@ -25,7 +25,7 @@
 
 **Step 1: generating LEO satellite network dynamic state over time**
 
-Instructions can be found in `<hypatia>/paper/satellite_networks_state/README.md`
+Instructions can be found in `<hypatia>/paper_experiment_3/satellite_networks_state/README.md`
 
 **Step 2: build ns-3 simulator**
 
@@ -34,16 +34,16 @@ Instructions can be found in `<hypatia>/ns3-sat-sim/README.md`
 
 <!-- **Step 3: performing analysis using satgenpy**
 
-Instructions can be found in `<hypatia>/paper/satgenpy_analysis/README.md` -->
+Instructions can be found in `<hypatia>/paper_experiment_3/satgenpy_analysis/README.md` -->
 
 **Step 4: running ns-3 experiments**
 
-Instructions can be found in `<hypatia>/paper/ns3_experiments/README.md`
+Instructions can be found in `<hypatia>/paper_experiment_3/ns3_experiments/README.md`
 
 **Step 5: generating satviz figures**
 
-Instructions can be found in `<hypatia>/satviz/README.md` under `Visualizations in the paper`.
+Instructions can be found in `<hypatia>/satviz/README.md` under `Visualizations in the paper_experiment_3`.
 
-**Step 6: plotting figures of the paper**
+**Step 6: plotting figures of the paper_experiment_3**
 
-Instructions can be found in `<hypatia>/paper/figures/README.md`
+Instructions can be found in `<hypatia>/paper_experiment_3/figures/README.md`

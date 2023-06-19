@@ -27,7 +27,7 @@ local_shell = exputil.LocalShell()
 # Setup parameters
 # TODO: You have to configure these to match your own machine setup
 remote_user = "user"
-remote_path_to_satellite_network_state_dir = "/path/to/hypatia/paper/satellite_networks_state"
+remote_path_to_satellite_network_state_dir = "/path/to/hypatia/paper_experiment_3/satellite_networks_state"
 machines = [
     "machine0", "machine1", "machine2"
 ]
