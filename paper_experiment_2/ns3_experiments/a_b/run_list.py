@@ -45,8 +45,8 @@ def generateAtoBPoints(constellation):
     else:
         print("Error in constellation")
         
-    for orig in range(10):
-        for dest in range(orig,10):
+    for orig in range(9):
+        for dest in range(orig,9):
             if (orig != dest): 
                 paths.append((orig + count, dest + count))
     return paths

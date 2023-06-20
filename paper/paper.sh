@@ -48,4 +48,6 @@ cd .. || exit 1
 cd merge_results|| exit 1 
 python step_1_merge_rtt_results.py || exit 1
 python step_2_merge_rtt_of_results.py || exit 1
+python step_3_merge_number_satellites_results.py || exit 1
+python step_4_merge_rtt_of_number_satellites.py || exit 1
 cd .. || exit 1

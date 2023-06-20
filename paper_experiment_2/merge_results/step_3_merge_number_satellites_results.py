@@ -143,3 +143,7 @@ def mergeConstellations():
     merged_df_resultant = merged_df[['origin_name', 'destination_name', 'satellites_telesat', 'satellites_distance_telesat', 
                                      'satellites_kuiper', 'satellites_distance_kuiper', 'satellites_starlink', 'satellites_distance_starlink']]
     merged_df_resultant.to_csv(merged_number_satellites_csv_path, index=False)
+
+
+mergeConstellations()
+print('Generated file')
