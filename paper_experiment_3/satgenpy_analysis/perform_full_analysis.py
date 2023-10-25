@@ -23,6 +23,11 @@
 import exputil
 import time
 
+import sys
+sys.path.append('../satellite_networks_state/input_data')
+
+from experimentCities import Cities
+
 local_shell = exputil.LocalShell()
 max_num_processes = 6
 
@@ -44,6 +49,7 @@ local_shell.make_full_dir("data/command_logs")
 commands_to_run = []
 
 #scenarios
+numberCities = len(Cities.generateCitiesArray())
 def generateAtoBPoints(constellation):
     paths = []
     count = 0
@@ -56,8 +62,8 @@ def generateAtoBPoints(constellation):
     else:
         print("Error in constellation")
         
-    for orig in range(10):
-        for dest in range(orig,10):
+    for orig in range(numberCities):
+        for dest in range(orig,numberCities):
             if (orig != dest): 
                 paths.append((orig + count, dest + count))
     return paths

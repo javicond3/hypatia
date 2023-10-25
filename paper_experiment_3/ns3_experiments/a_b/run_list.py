@@ -20,6 +20,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import sys
+sys.path.append('../../satellite_networks_state/input_data')
+
+from experimentCities import Cities
+
 # Core values
 dynamic_state_update_interval_ms = 1000                         # 1000 millisecond update interval
 simulation_end_time_s = 200                                     # 200 seconds
@@ -33,6 +38,7 @@ simulation_end_time_ns = simulation_end_time_s * 1000 * 1000 * 1000
 dynamic_state = "dynamic_state_" + str(dynamic_state_update_interval_ms) + "ms_for_" + str(simulation_end_time_s) + "s"
 
 #scenarios
+numberCities = len(Cities.generateCitiesArray())
 def generateAtoBPoints(constellation):
     paths = []
     count = 0
@@ -45,8 +51,8 @@ def generateAtoBPoints(constellation):
     else:
         print("Error in constellation")
         
-    for orig in range(10):
-        for dest in range(orig,10):
+    for orig in range(numberCities):
+        for dest in range(orig,numberCities):
             if (orig != dest): 
                 paths.append((orig + count, dest + count))
     return paths

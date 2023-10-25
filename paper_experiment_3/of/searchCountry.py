@@ -1,29 +1,13 @@
 import pandas as pd
 import pprint
+import sys
+sys.path.append('../satellite_networks_state/input_data')
 
-cities = [
-"Cairo",
-"TelAviv",
-"Jerusalem",
-"Limassol",
-"Beirut",
-"Ankara",
-"Izmir",
-"Athens",
-"Tunis",
-]
+from experimentCities import Cities
 
-cities_dict = {
-"Cairo": {"count": 0, "cities":[]},
-"TelAviv": {"count": 0, "cities":[]},
-"Jerusalem": {"count": 0, "cities":[]},
-"Limassol": {"count": 0, "cities":[]},
-"Beirut": {"count": 0, "cities":[]},
-"Ankara": {"count": 0, "cities":[]},
-"Izmir": {"count": 0, "cities":[]},
-"Athens": {"count": 0, "cities":[]},
-"Tunis": {"count": 0, "cities":[]},
-}
+cities = Cities.generateCitiesArray()
+
+cities_dict = Cities.generateCitiesDictCount()
 
 csv_path = './prepared_rtt_of.csv'
 

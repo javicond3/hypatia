@@ -2,6 +2,10 @@ import os
 import csv
 import re
 import pandas as pd
+import sys
+sys.path.append('../satellite_networks_state/input_data')
+
+from experimentCities import Cities
 
 
 folder_path = '../satgenpy_analysis/data'
@@ -64,17 +68,7 @@ def getCityName(constellation, origin, dest):
 
 
 
-    city_names = {
-    0: "Cairo",
-    1: "TelAviv",
-    2: "Jerusalem",
-    3: "Limassol",
-    4: "Beirut",
-    5: "Ankara",
-    6: "Izmir",
-    7: "Athens",
-    8: "Tunis",
-    }
+    city_names = Cities.generateCitiesDict()
 
     
 
@@ -145,3 +139,6 @@ def mergeConstellations():
     merged_df_resultant = merged_df[['origin_name', 'destination_name', 'satellites_telesat', 'satellites_distance_telesat', 
                                      'satellites_kuiper', 'satellites_distance_kuiper', 'satellites_starlink', 'satellites_distance_starlink']]
     merged_df_resultant.to_csv(merged_number_satellites_csv_path, index=False)
+
+mergeConstellations()
+print("Generated file")

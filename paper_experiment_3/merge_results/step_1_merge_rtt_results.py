@@ -2,6 +2,10 @@ import os
 import csv
 import re
 import pandas as pd
+import sys
+sys.path.append('../satellite_networks_state/input_data')
+
+from experimentCities import Cities
 
 
 folder_path = '../ns3_experiments/a_b/runs'
@@ -39,17 +43,7 @@ def getCityName(constellation, origin, dest):
 
 
 
-    city_names = {
-        0: "Cairo",
-        1: "TelAviv",
-        2: "Jerusalem",
-        3: "Limassol",
-        4: "Beirut",
-        5: "Ankara",
-        6: "Izmir",
-        7: "Athens",
-        8: "Tunis",
-    }
+    city_names = Cities.generateCitiesDict()
     
 
     origin_name = city_names.get(origin_id, "Unknown")

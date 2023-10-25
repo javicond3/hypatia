@@ -63,16 +63,15 @@ def getCityName(constellation, origin, dest):
     dest_id = int(dest) - count
 
     city_names = {
-        0: "Madrid",
-        1: "Barcelona",
-        2: "Riyadh",
-        3: "Los-Angeles",
-        4: "New-York",
-        5: "Mexico-City",
-        6: "Bogota",
-        7: "Cairo",
-        8: "Tokyo",
-        9: "Sidney"
+        0: "Frankfurt",
+        1: "Munich",
+        2: "Amsterdam",
+        3: "London",
+        4: "Rome",
+        5: "Barcelona",
+        6: "Venice",
+        7: "Helsinki",
+        8: "Moscow"
     }
 
     
@@ -144,3 +143,7 @@ def mergeConstellations():
     merged_df_resultant = merged_df[['origin_name', 'destination_name', 'satellites_telesat', 'satellites_distance_telesat', 
                                      'satellites_kuiper', 'satellites_distance_kuiper', 'satellites_starlink', 'satellites_distance_starlink']]
     merged_df_resultant.to_csv(merged_number_satellites_csv_path, index=False)
+
+
+mergeConstellations()
+print('Generated file')
