@@ -1,0 +1,4 @@
+constellation,height,type,origin,destination,origin_name,destination_name,Mean latency there,Mean latency back,Min. RTT,Mean RTT,Max. RTT,Smp.std. RTT,Reply arrival
+starlink,550,isls,1584,1585,Cairo,TelAviv,4.01 ms,4.01 ms,7.38 ms,8.01 ms,9.37 ms,0.40 ms,2000/2000 (100%)
+kuiper,630,isls,1156,1157,Cairo,TelAviv,4.83 ms,4.83 ms,8.89 ms,9.67 ms,11.22 ms,0.46 ms,2000/2000 (100%)
+telesat,1015,isls,351,352,Cairo,TelAviv,8.44 ms,8.44 ms,13.94 ms,16.89 ms,21.47 ms,1.80 ms,2000/2000 (100%)

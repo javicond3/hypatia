@@ -1,0 +1,4 @@
+constellation,origin,destination,origin_name,destination_name,satellites,satellites_distance
+telesat,351,352,Cairo,TelAviv,1.0,2688.0269999999996
+starlink,1584,1585,Cairo,TelAviv,1.0,1250.9980426136362
+kuiper,1156,1157,Cairo,TelAviv,1.0,1504.4814775000004
